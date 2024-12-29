@@ -49,6 +49,14 @@ public:
         case DOWNLEFT:
              x--; y++;
              break;
+        case UPRIGHT:
+             x++; y--;
+             break;
+        case DOWNRIGHT:
+             x++; y++;
+             break;
+        default:
+             break;
         }
     }
 };
