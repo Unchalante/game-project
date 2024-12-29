@@ -20,6 +20,12 @@ public:
         x = originalX; y = originalY;
         direction =  STOP;
     }
+    void changeDirection(eDir d)
+    {
+        direction = d;
+    }
+    inline int getX() { return x; }
+    inline int getY() { return x; }
 };
 
 int main()
