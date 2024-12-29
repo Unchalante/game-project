@@ -85,7 +85,14 @@ public:
     inline void Reset() { x = originalX; y = originalY; }
     inline int getX() { return x; }
     inline int getY() { return y; }
-}
+    inline void moveUp() {y--; }
+    inline void moveDown() { y++; }
+        friend ostream & operator<<(ostream & o, cBall c)
+    {
+        o << "Ball [" << c.x << "," << c.y << "][" << c.direction << "]";
+        return o;
+    }
+ }; 
 int main()
 {
     cBall c(0, 0);
