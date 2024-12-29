@@ -82,6 +82,9 @@ public:
         x = posX;
         y = posY;
     }   
+    inline void Reset() { x = originalX; y = originalY; }
+    inline int getX() { return x; }
+    inline int getY() { return y; }
 }
 int main()
 {
