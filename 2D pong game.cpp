@@ -40,6 +40,15 @@ public:
         case LEFT:
              x--;
              break;
+        case RIGHT:
+             x++;
+             break;
+        case UPLEFT:
+             x--; y--;
+             break;
+        case DOWNLEFT:
+             x--; y++;
+             break;
         }
     }
 };
