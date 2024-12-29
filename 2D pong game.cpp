@@ -65,7 +65,24 @@ public:
         return o;
     }
 };
-
+class cPaddle
+{
+private: 
+    int x, y;
+    int originalX, originalY;
+public:
+    cPaddle()
+    {
+        x = y = 0;
+    }    
+    cPaddle(int posX, int posY) : cPaddle() 
+    {
+        originalX = posX;
+        originalY = posY;
+        x = posX;
+        y = posY;
+    }   
+}
 int main()
 {
     cBall c(0, 0);
@@ -80,5 +97,6 @@ int main()
     c.randomDirection();
     c.Move();
     cout << c << endl;
+
     return 0;
 }
