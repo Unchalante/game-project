@@ -24,8 +24,13 @@ public:
     {
         direction = d;
     }
+    void randomDirection()
+    {
+        direction = (eDir)((rand() %6) + 1);
+    }
     inline int getX() { return x; }
     inline int getY() { return x; }
+    inline eDir getDirection() { return direction; }
 };
 
 int main()
