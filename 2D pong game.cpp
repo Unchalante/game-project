@@ -31,6 +31,17 @@ public:
     inline int getX() { return x; }
     inline int getY() { return x; }
     inline eDir getDirection() { return direction; }
+    void Move()
+    {
+        switch(direction)
+        {
+        case STOP:
+             break;
+        case LEFT:
+             x--;
+             break;
+        }
+    }
 };
 
 int main()
