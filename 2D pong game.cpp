@@ -77,6 +77,8 @@ int main()
     c.randomDirection();
     c.Move();
     cout << c << endl;
-
+    c.randomDirection();
+    c.Move();
+    cout << c << endl;
     return 0;
 }
