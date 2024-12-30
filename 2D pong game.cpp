@@ -191,7 +191,7 @@ public:
     {
         ball->Move();
 
-         int ballx = ball->getX();
+                 int ballx = ball->getX();
                  int bally = ball->getY();
                  int player1x = player1->getX();
                  int player2x = player2->getX();
@@ -220,6 +220,31 @@ public:
                     if(current = 'q')
                        quit = true;                                      
              }
+    }
+    void logic()
+    {
+                 int ballx = ball->getX();
+                 int bally = ball->getY();
+                 int player1x = player1->getX();
+                 int player2x = player2->getX();
+                 int player1y = player1->getY();
+                 int player2y = player2->getY();
+
+            //left paddle
+            for (int i = 0; i < 4; i++)
+                if (ballx == player1x + 1)
+                if (bally == player1y + i)
+                    ball->changeDirection((eDir)((rand() % 3) + 4));
+
+            //right paddle
+            for (int i = 0; i < 4; i++)
+                if (ballx == player2x - 1)
+                if (bally == player2y + i)
+                    ball->changeDirection((eDir)((rand() % 3) + 1));
+
+            //bottom wall
+            if(bally == height - 1)
+               ball->changeDirection(ball->getDirection() == DOWNRIGHT ? UPRIGHT : UPLEFT);                
     }
   };
 int main()
