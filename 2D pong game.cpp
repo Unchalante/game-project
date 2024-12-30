@@ -137,7 +137,7 @@ public:
     {
         system("cls");
         for(int i = 0; i < width + 2; i++)
-            cout << "#";
+            cout << "\xB2";
         cout << endl;
 
         for(int i = 0; i < height; i++)
@@ -152,23 +152,41 @@ public:
                  int player2y = player2->getY();
 
                  if(j == 0 )
-                     cout << "#";
+                     cout << "\xB2";
 
                  if(ballx == j && bally == i)
                     cout << "O"; //ball
                  else if(player1x == j && player1y == i)
-                    cout << "#"; //player1 
-                  else if(player2x == j && player2y == i)
-                    cout << "#"; //player2
-                  else
+                    cout << "\xDB"; //player1 
+                 else if(player2x == j && player2y == i)
+                    cout << "\xDB"; //player2
+
+                 else if(player1x == j && player1y + 1 == i)
+                    cout << "\xDB"; //player1 
+                 else if(player1x == j && player1y + 2 == i)
+                    cout << "\xDB"; //player1 
+                 else if(player1x == j && player1y + 3 == i)
+                    cout << "\xDB"; //player1 
+
+                    
+                 else if(player2x == j && player2y + 1 == i)
+                    cout << "\xDB"; //player1 
+                 else if(player2x == j && player2y + 2 == i)
+                    cout << "\xDB"; //player1 
+                 else if(player2x == j && player2y + 3 == i)
+                    cout << "\xDB"; //player1
+
+                 else
                     cout << " ";
 
+
                  if(j == width - 1)
-                    cout << "#";
+                    cout << "\xB2";
             }
         }
+
         for(int i = 0; i < width + 2; i++)
-            cout << "#";
+            cout << "\xB2";
         cout << endl;
     }
   };
