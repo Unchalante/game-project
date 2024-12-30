@@ -111,6 +111,7 @@ public:
           srand(time(NULL));
           quit = false;
           up1 = 'w'; up2 = 'i';
+          down1 = 's'; down2 = 'k';
           score1 = score2 = 0;
           width = w; height = h;
           ball = new cBall(w / 2, h / 2);
@@ -130,10 +131,22 @@ public:
 
            ball->Reset();
            player1->Reset();   
+
+    }
+    void Draw()
+    {
+        system("cls");
+        for(int i = 0; i < width + 2; i++)
+            cout << "#";
+
+        for(int i = 0; i < width + 2; i++)
+            cout << "#";
+
     }
   };
 int main()
 {
-
+    cGamemanager c(40, 20);
+    c.Draw();
     return 0;
 }
