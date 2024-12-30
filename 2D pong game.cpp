@@ -100,7 +100,7 @@ public:
 private:
      int width, height;
      int score1, score2;
-     char up1,dowm1, up2,down2;
+     char up1,down1, up2,down2;
      bool quit;
      cBall * ball;
      cPaddle *player1;
@@ -175,10 +175,8 @@ public:
                     cout << "\xDB"; //player1 
                  else if(player2x == j && player2y + 3 == i)
                     cout << "\xDB"; //player1
-
                  else
                     cout << " ";
-
 
                  if(j == width - 1)
                     cout << "\xB2";
@@ -188,6 +186,40 @@ public:
         for(int i = 0; i < width + 2; i++)
             cout << "\xB2";
         cout << endl;
+    }
+    void Input()
+    {
+        ball->Move();
+
+         int ballx = ball->getX();
+                 int bally = ball->getY();
+                 int player1x = player1->getX();
+                 int player2x = player2->getX();
+                 int player1y = player1->getY();
+                 int player2y = player2->getY();
+
+                 if (_kbhit())
+                 {
+                    char current = _getch();
+                    if (current == up1)
+                        if(player1y > 0)
+                           player1->moveUp();
+                     if (current == up2)
+                        if(player2y > 0)
+                           player2->moveUp(); 
+                    if (current == down1)
+                        if(player1y + 4 < height)
+                           player1->moveDown(); 
+                    if (current == down2)
+                        if(player2y + 4 < height)
+                           player2->moveDown();    
+
+                    if(ball->getDirection() == STOP)
+                       ball->randomDirection();
+
+                    if(current = 'q')
+                       quit = true;                                      
+             }
     }
   };
 int main()
