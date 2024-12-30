@@ -244,8 +244,18 @@ public:
 
             //bottom wall
             if(bally == height - 1)
-               ball->changeDirection(ball->getDirection() == DOWNRIGHT ? UPRIGHT : UPLEFT);                
+               ball->changeDirection(ball->getDirection() == DOWNRIGHT ? UPRIGHT : UPLEFT); 
+            //top wall
+            if(bally == 0)
+               ball->changeDirection(ball->getDirection() == UPRIGHT ? DOWNRIGHT : DOWNLEFT);   
+            //right wall   
+            if(ballx == width - 1) 
+               ScoreUp(player1);              
+            //left wall   
+            if(ballx == 0) 
+               ScoreUp(player2);
     }
+    
   };
 int main()
 {
