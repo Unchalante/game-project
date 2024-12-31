@@ -186,6 +186,8 @@ public:
         for(int i = 0; i < width + 2; i++)
             cout << "\xB2";
         cout << endl;
+
+        cout << "score 1: " << score1 << endl << "score 2: " << score2 << endl;
     }
     void Input()
     {
@@ -217,7 +219,7 @@ public:
                     if(ball->getDirection() == STOP)
                        ball->randomDirection();
 
-                    if(current = 'q')
+                    if(current == 'q')
                        quit = true;                                      
              }
     }
@@ -255,11 +257,19 @@ public:
             if(ballx == 0) 
                ScoreUp(player2);
     }
-    
+     void Run()
+     {
+        while (!quit)
+        {
+            Draw();
+            Input();
+            logic();
+        }
+     }
   };
 int main()
 {
     cGamemanager c(40, 20);
-    c.Draw();
+    c.Run();
     return 0;
 }
